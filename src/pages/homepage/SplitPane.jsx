@@ -7,12 +7,11 @@ const StyledSplitPane = styled.div`
   min-height: calc(100vh - 62.76px);
   display: flex;
   > * {
-    padding-top: 1em;
+    padding: 2em;
   }
-  .order-form {
+  .order-form-container {
     flex-basis: 50%;
     height: calc(100vh - 62.76px);
-    overflow-x: scroll;
   }
   .food-grid {
     flex-basis: 50%;
