@@ -1,77 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import TopLoadingBar from 'react-top-loading-bar';
+
+// SHARED COMPONENTS
 import NavBar from 'components/NavBar';
+import Divider from 'components/Divider';
+
+// PAGE COMPONENTS
+import TopLoadingBar from 'react-top-loading-bar';
 import SplitPane from 'pages/HomePage/SplitPane';
-import OrderForm from 'pages/HomePage/SplitPane/OrderForm';
-import FoodGrid from 'pages/HomePage/SplitPane/FoodGrid';
-import FoodCard from 'pages/HomePage/SplitPane/FoodGrid/FoodCard';
+import OrderForm from 'pages/HomePage/OrderForm';
+import OrderFormItem from 'pages/HomePage/OrderFormItem';
+import FoodGrid from 'pages/HomePage/FoodGrid';
+import FoodCard from 'pages/HomePage/FoodGrid/FoodCard';
+
+// SERVICES
+import { getSampleOrders, getFoods } from 'services/api';
 
 const HomePage = () => {
   const [topLoadingBarProgress, setTopBarLoadingProgress] = useState(0);
   const [isPageLoading, setIsPageLoading] = useState(true);
-  const [foods] = useState([
-    {
-      image: 'https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg',
-      cookingTime: 0,
-      name: 'Barbecue',
-      price: 12,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-    {
-      image:
-        '//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg',
-      cookingTime: 0,
-      name: 'Kwek Kwek',
-      price: 15,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-    {
-      image: 'https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg',
-      cookingTime: 0,
-      name: 'Barbecue',
-      price: 12,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-    {
-      image:
-        '//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg',
-      cookingTime: 0,
-      name: 'Kwek Kwek',
-      price: 15,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-    {
-      image: 'https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg',
-      cookingTime: 0,
-      name: 'Barbecue',
-      price: 12,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-    {
-      image:
-        '//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg',
-      cookingTime: 0,
-      name: 'Kwek Kwek',
-      price: 15,
-      description:
-        'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-    },
-  ]);
+  const [orders, setOrders] = useState([]);
+  const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    setTopBarLoadingProgress(20);
-    setTimeout(() => {
-      setTopBarLoadingProgress(65);
-    }, 500);
-    setTimeout(() => {
-      setTopBarLoadingProgress(100);
-      setIsPageLoading(false);
-    }, 1000);
+    getSampleOrders().then(setOrders);
+    getFoods().then((foods) => {
+      setFoods(foods);
+      setTopBarLoadingProgress(20);
+      setTimeout(() => {
+        setTopBarLoadingProgress(65);
+      }, 500);
+      setTimeout(() => {
+        setTopBarLoadingProgress(100);
+        setIsPageLoading(false);
+      }, 1000);
+    });
   }, []);
 
   const onTopBarLoaderFinished = () => {};
@@ -86,7 +48,14 @@ const HomePage = () => {
       />
       <NavBar />
       <SplitPane>
-        <OrderForm />
+        <OrderForm>
+          {orders.map((order) => (
+            <>
+              <OrderFormItem image={order.image} name={order.name} />
+              <Divider height={3} color="tomato" />
+            </>
+          ))}
+        </OrderForm>
         <FoodGrid>
           {foods.map((food) => (
             <FoodCard

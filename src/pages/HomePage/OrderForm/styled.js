@@ -4,9 +4,9 @@ export const OrderForm = styled.form`
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
-  padding: 2em;
+  padding: 3em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  overflow-x: scroll;q
+  justify-content: flex-start;
+  overflow-x: scroll;
 `;

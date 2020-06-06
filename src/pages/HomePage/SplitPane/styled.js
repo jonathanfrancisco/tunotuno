@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const SplitPane = styled.div`
-  min-height: calc(100vh - 62.76px);
+  min-height: calc(100vh - (62.76px));
   display: flex;
+  justify-content: center;
+  padding: 2em 0;
   > * {
-    padding: 2em;
-    flex-basis: 50%;
-    height: calc(100vh - 62.76px);
+    flex-basis: 40%;
+    height: calc(100vh - 126.76px);
     overflow-x: scroll;
   }
 `;
