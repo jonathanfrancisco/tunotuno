@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styled';
-import OrderFormItem from 'pages/HomePage/OrderFormItem';
+import OrderFormItem from 'pages/HomePage/SplitPane/OrderForm/OrderFormItem';
 
 const OrderForm = () => {
   return (

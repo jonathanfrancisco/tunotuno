@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import TopLoadingBar from 'react-top-loading-bar';
 import NavBar from 'components/NavBar';
 import SplitPane from 'pages/HomePage/SplitPane';
-import OrderForm from 'pages/HomePage/OrderForm';
-import FoodGrid from 'pages/HomePage/FoodGrid';
-import FoodCard from 'pages/HomePage/FoodCard';
+import OrderForm from 'pages/HomePage/SplitPane/OrderForm';
+import FoodGrid from 'pages/HomePage/SplitPane/FoodGrid';
+import FoodCard from 'pages/HomePage/SplitPane/FoodGrid/FoodCard';
 
 const HomePage = () => {
   const [topLoadingBarProgress, setTopBarLoadingProgress] = useState(0);
