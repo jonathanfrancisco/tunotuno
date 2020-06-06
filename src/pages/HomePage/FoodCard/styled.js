@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-export const StyledFoodCard = styled.div`
+export const FoodCard = styled.div`
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
@@ -54,24 +53,3 @@ export const StyledFoodCard = styled.div`
     background-color: #c0392b;
   }
 `;
-
-const FoodCard = ({ image, cookingTime, name, price, description }) => {
-  return (
-    <StyledFoodCard className="food-card">
-      <img className="food-card_image" src={image} />
-      <div className="food-card_content">
-        <p className="food-card_content_cooking-time">
-          {cookingTime} minute(s)
-        </p>
-        <h3>{name} </h3>
-        <h5>₱{price}</h5>
-
-        <p className="food-card_content_description">{description}</p>
-
-        <button>Add to order</button>
-      </div>
-    </StyledFoodCard>
-  );
-};
-
-export default FoodCard;

@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const StyledNavBar = styled.div`
+export const NavBar = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -20,7 +19,7 @@ const StyledNavBar = styled.div`
   }
 `;
 
-const StyledTitle = styled.h2`
+export const Title = styled.h2`
   margin-right: auto;
   color: #e74c3c;
   :hover {
@@ -28,7 +27,7 @@ const StyledTitle = styled.h2`
   }
 `;
 
-const StyledNav = styled.nav`
+export const Nav = styled.nav`
   ul {
     display: flex;
   }
@@ -48,25 +47,3 @@ const StyledNav = styled.nav`
     background-color: #c0392b;
   }
 `;
-
-const NavBar = (props) => {
-  return (
-    <StyledNavBar>
-      <StyledTitle>TunoTuno</StyledTitle>
-      <StyledNav>
-        <ul>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a className="login-btn" href="#">
-              Login
-            </a>
-          </li>
-        </ul>
-      </StyledNav>
-    </StyledNavBar>
-  );
-};
-
-export default NavBar;
