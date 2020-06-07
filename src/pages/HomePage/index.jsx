@@ -10,7 +10,7 @@ import SplitPane from 'pages/HomePage/SplitPane';
 import OrderForm from 'pages/HomePage/OrderForm';
 import OrderFormItem from 'pages/HomePage/OrderFormItem';
 import FoodGrid from 'pages/HomePage/FoodGrid';
-import FoodCard from 'pages/HomePage/FoodGrid/FoodCard';
+import FoodCard from 'pages/HomePage/FoodCard';
 
 // SERVICES
 import { getSampleOrders, getFoods } from 'services/api';
