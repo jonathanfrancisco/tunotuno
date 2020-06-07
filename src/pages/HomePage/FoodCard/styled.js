@@ -9,6 +9,7 @@ export const FoodCardContentDescription = styled.p`
 `;
 
 export const FoodCard = styled.div`
+  border-radius: 5px;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
@@ -25,6 +26,8 @@ export const FoodCardImage = styled.img`
   height: 150px;
   max-width: 100%;
   object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 `;
 
 export const FoodCardContent = styled.div`

@@ -36,10 +36,10 @@ const HomePage = () => {
     });
   }, []);
 
-  const handleAddOrder = (order) => {
-    setOrders([...orders, order]);
+  const handleAddOrder = ({ image, cookingTime, name, price }) => {
+    setOrders([...orders, { image, cookingTime, name, price }]);
   };
-
+  console.log(orders);
   return (
     <>
       <TopLoadingBar
@@ -50,10 +50,14 @@ const HomePage = () => {
       <NavBar />
       <SplitPane>
         <OrderForm>
-          <h3>Your Order</h3>
           {orders.map((order) => (
             <>
-              <OrderFormItem image={order.image} name={order.name} />
+              <OrderFormItem
+                image={order.image}
+                cookingTime={order.cookingTime}
+                name={order.name}
+                price={order.price}
+              />
               <Divider height={3} color="#dfe6e9" />
             </>
           ))}

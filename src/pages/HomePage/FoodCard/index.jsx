@@ -16,7 +16,7 @@ const FoodCard = ({
   }
 
   const handleAddToOrder = () => {
-    onAddOrder({ image, name });
+    onAddOrder({ image, cookingTime, name, price });
   };
 
   return (
