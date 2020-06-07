@@ -9,25 +9,33 @@ const FoodCard = ({
   price,
   description,
   isLoading,
+  onAddOrder,
 }) => {
   if (isLoading) {
     return <BulletList />;
   }
 
+  const handleAddToOrder = () => {
+    onAddOrder({ image, name });
+  };
+
   return (
-    <S.FoodCard className="food-card">
-      <img alt="food" className="food-card_image" src={image} />
-      <div className="food-card_content">
-        <p className="food-card_content_cooking-time">
+    <S.FoodCard>
+      <S.FoodCardImage src={image} alt="food" />
+      <S.FoodCardContent>
+        <S.FoodCardContentCookingTime>
           {cookingTime} minute(s)
-        </p>
-        <h3>{name} </h3>
-        <h5>₱{price}</h5>
+        </S.FoodCardContentCookingTime>
+        <S.FoodCardContentName>{name}</S.FoodCardContentName>
+        <S.FoodCardContentPrice>₱{price}</S.FoodCardContentPrice>
 
-        <p className="food-card_content_description">{description}</p>
-
-        <button>Add to order</button>
-      </div>
+        <S.FoodCardContentDescription>
+          {description}
+        </S.FoodCardContentDescription>
+        <S.FoodCardContentAddOrderBtn onClick={handleAddToOrder}>
+          Add to order
+        </S.FoodCardContentAddOrderBtn>
+      </S.FoodCardContent>
     </S.FoodCard>
   );
 };

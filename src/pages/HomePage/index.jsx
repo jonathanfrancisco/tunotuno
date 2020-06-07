@@ -22,7 +22,7 @@ const HomePage = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    getSampleOrders().then(setOrders);
+    // getSampleOrders().then(setOrders);
     getFoods().then((foods) => {
       setFoods(foods);
       setTopBarLoadingProgress(20);
@@ -36,23 +36,25 @@ const HomePage = () => {
     });
   }, []);
 
-  const onTopBarLoaderFinished = () => {};
+  const handleAddOrder = (order) => {
+    setOrders([...orders, order]);
+  };
 
   return (
     <>
       <TopLoadingBar
         progress={topLoadingBarProgress}
-        onLoaderFinished={onTopBarLoaderFinished}
         height={3}
         color="E74C3C"
       />
       <NavBar />
       <SplitPane>
         <OrderForm>
+          <h3>Your Order</h3>
           {orders.map((order) => (
             <>
               <OrderFormItem image={order.image} name={order.name} />
-              <Divider height={3} color="tomato" />
+              <Divider height={3} color="#dfe6e9" />
             </>
           ))}
         </OrderForm>
@@ -65,6 +67,7 @@ const HomePage = () => {
               price={food.price}
               description={food.description}
               isLoading={isPageLoading}
+              onAddOrder={handleAddOrder}
             />
           ))}
         </FoodGrid>

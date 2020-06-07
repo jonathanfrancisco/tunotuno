@@ -4,10 +4,10 @@ import * as S from './styled';
 const OrderFormItem = ({ image, name }) => {
   return (
     <S.OrderFormItem>
-      <img class="order-form-item-image" alt="food" src={image} />
-      <div className="order-form-item-details">
-        <h5>{name}</h5>
-      </div>
+      <S.OrderFormItemImage src={image} />
+      <S.OrderFormItemDetails>
+        <S.OrderFormItemName>{name}</S.OrderFormItemName>
+      </S.OrderFormItemDetails>
     </S.OrderFormItem>
   );
 };
