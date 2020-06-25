@@ -36,8 +36,11 @@ const HomePage = () => {
     });
   }, []);
 
-  const handleAddOrder = ({ image, cookingTime, name, price }) => {
-    setOrders([...orders, { image, cookingTime, name, price }]);
+  const handleAddOrder = ({ id, image, cookingTime, name, price }) => {
+    const isFoodExistsInOrder = orders.find((order) => order.id === id);
+    if (!isFoodExistsInOrder) {
+      setOrders([...orders, { id, image, cookingTime, name, price }]);
+    }
   };
   console.log(orders);
   return (
@@ -65,6 +68,7 @@ const HomePage = () => {
         <FoodGrid>
           {foods.map((food) => (
             <FoodCard
+              id={food.id}
               image={food.image}
               cookingTime={food.cookingTime}
               name={food.name}

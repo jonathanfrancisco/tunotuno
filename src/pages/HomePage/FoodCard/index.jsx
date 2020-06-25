@@ -3,6 +3,7 @@ import { BulletList } from 'react-content-loader';
 import * as S from './styled';
 
 const FoodCard = ({
+  id,
   image,
   cookingTime,
   name,
@@ -16,7 +17,7 @@ const FoodCard = ({
   }
 
   const handleAddToOrder = () => {
-    onAddOrder({ image, cookingTime, name, price });
+    onAddOrder({ id, image, cookingTime, name, price });
   };
 
   return (

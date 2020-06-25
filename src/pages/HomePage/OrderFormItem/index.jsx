@@ -12,10 +12,10 @@ const OrderFormItem = ({ image, cookingTime, name, price }) => {
         <S.OrderedPrice>₱{price}</S.OrderedPrice>
       </S.Details>
       <S.Actions>
-        <p>Quantity</p>
-        <AiFillPlusCircle />
-        <S.Quantity>100</S.Quantity>
+        <S.QuantityLabel>Qty: </S.QuantityLabel>
         <AiFillMinusCircle />
+        <S.Quantity>100</S.Quantity>
+        <AiFillPlusCircle />
         <S.RemoveBtn>X</S.RemoveBtn>
       </S.Actions>
     </S.OrderFormItem>

@@ -1,42 +1,16 @@
 [
   {
+    "id": 1,
     "image": "https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg",
-    "cookingTime": 0,
+    "cookingTime": 5,
     "name": "Barbecue",
     "price": 12,
     "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
   },
   {
+    "id": 2,
     "image": "//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg",
-    "cookingTime": 0,
-    "name": "Kwek Kwek",
-    "price": 15,
-    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
-  },
-  {
-    "image": "https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg",
-    "cookingTime": 0,
-    "name": "Barbecue",
-    "price": 12,
-    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
-  },
-  {
-    "image": "//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg",
-    "cookingTime": 0,
-    "name": "Kwek Kwek",
-    "price": 15,
-    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
-  },
-  {
-    "image": "https://i.ytimg.com/vi/YNFLLOiXiDg/maxresdefault.jpg",
-    "cookingTime": 0,
-    "name": "Barbecue",
-    "price": 12,
-    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"
-  },
-  {
-    "image": "//www.willflyforfood.net/wp-content/uploads/2017/09/filipino-street-food.jpg",
-    "cookingTime": 0,
+    "cookingTime": 5,
     "name": "Kwek Kwek",
     "price": 15,
     "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum"

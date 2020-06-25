@@ -31,10 +31,20 @@ export const OrderedPrice = styled.h5`
 
 export const Actions = styled.div`
   display: flex;
+  align-items: center;
+`;
+
+export const QuantityLabel = styled.p`
+  margin-right: 8px;
+  color: #2c3e50;
 `;
 
 export const Quantity = styled.h5``;
 
 export const RemoveBtn = styled.button`
   flex-basis: 10%;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 1em;
 `;
